@@ -1,7 +1,0 @@
-root/a52dec-0.7.4-8.el6.rf.x86_64.rpm                   /root/libmad-0.15.1b-4.el6.rf.x86_64.rpm
-/root/faad2-2.7-1.el6.rf.x86_64.rpm                      /root/librtmp-2.3-1.el6.rf.x86_64.rpm
-/root/faad2-devel-2.7-1.el6.rf.x86_64.rpm                /root/opencore-amr-0.1.2-1.el6.rf.x86_64.rpm
-/root/gpac-0.4.5-0.13.cvs20120511.el6.3.x86_64.rpm       /root/ufraw-gimp-0.18-13.el6.x86_64.rpm
-/root/gpac-doc-0.4.5-0.13.cvs20120511.el6.3.x86_64.rpm   /root/xvidcore-1.2.2-1.el6.rf.x86_64.rpm
-/root/gpac-libs-0.4.5-0.13.cvs20120511.el6.3.x86_64.rpm
-
