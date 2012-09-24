@@ -20,11 +20,14 @@ rpm -i --nosignature rpmfusion-nonfree-release-6-1.noarch.rpm
 
 yum update
 
-yum install java-1.6.0-openjdk gpac lame  perl-Image-ExifTool libreoffice-headless libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-draw 
 
 
 cd ..
 yum install rpms/*.rpm
+
+
+yum install java-1.6.0-openjdk gpac lame  perl-Image-ExifTool libreoffice-headless libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-draw 
+
 #cp -rp misc/qt-faststart /usr/bin
  
 #exiftool, open office, newer version of image magick
