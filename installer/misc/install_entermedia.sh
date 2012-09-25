@@ -1,5 +1,7 @@
 ##make sure you have a user useradd entermedia 
 
+adduser entermedia
+
 mkdir /home/entermedia/.ffmpeg
 cp .ffmpeg/libx264-normal.ffpreset /home/entermedia/.ffmpeg/libx264-normal.ffpreset
 
