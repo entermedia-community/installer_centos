@@ -6,7 +6,6 @@ JAVA_HOME=/usr/lib/jvm/jre/
 export JAVA_HOME
 PATH=$JAVA_HOME/bin:$PATH
 export PATH
-export ip=`ifconfig eth0 |grep "inet addr" |awk '{print $2}' |awk -F: '{print $2}'`
 
 export CATALINA_HOME=/opt/entermedia/tomcat
 export CATALINA_BASE=/opt/entermedia/tomcat
@@ -52,25 +51,13 @@ fi
 case $1 in
 start)
 su $TOMCAT7_USER -l -c $startup
-/sbin/iptables -t nat -A OUTPUT -d localhost -p tcp --dport 80 -j REDIRECT --to-ports 8080
-/sbin/iptables -t nat -A OUTPUT -d $ip -p tcp --dport 80 -j REDIRECT --to-ports 8080
-/sbin/iptables -t nat -A PREROUTING -d $ip -p tcp --dport 80 -j REDIRECT --to-ports 8080
 ;; 
 stop)   
 su $TOMCAT7_USER -c  $shutdown
-/sbin/iptables -t nat -D OUTPUT -d localhost -p tcp --dport 80 -j REDIRECT --to-ports 8080
-/sbin/iptables -t nat -D OUTPUT -d $ip -p tcp --dport 80 -j REDIRECT --to-ports 8080
-/sbin/iptables -t nat -D PREROUTING -d $ip -p tcp --dport 80 -j REDIRECT --to-ports 8080
 ;; 
 restart)
-/sbin/iptables -t nat -D OUTPUT -d localhost -p tcp --dport 80 -j REDIRECT --to-ports 8080
-/sbin/iptables -t nat -D OUTPUT -d $ip -p tcp --dport 80 -j REDIRECT --to-ports 8080
-/sbin/iptables -t nat -D PREROUTING -d $ip -p tcp --dport 80 -j REDIRECT --to-ports 8080
 su $TOMCAT7_USER -c  $shutdown
 su $TOMCAT7_USER -l -c $startup
-#/sbin/iptables -t nat -A OUTPUT -d localhost -p tcp --dport 80 -j REDIRECT --to-ports 8080
-#/sbin/iptables -t nat -A OUTPUT -d $ip -p tcp --dport 80 -j REDIRECT --to-ports 8080
-#/sbin/iptables -t nat -A PREROUTING -d $ip -p tcp --dport 80 -j REDIRECT --to-ports 8080
 ;; 
 esac    
 exit 0

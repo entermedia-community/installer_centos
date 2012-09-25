@@ -25,3 +25,4 @@ cd ../misc
 cp -rp qt-faststart /usr/bin
 sh ./install_entermedia.sh
 
+service tomcat start
