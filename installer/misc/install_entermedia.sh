@@ -3,6 +3,12 @@
 adduser entermedia
 usermod -a -G vboxsf entermedia
 
+# Fix File Limits
+echo "fs.file-max = 10000000" >> /etc/sysctl.conf
+echo "entermedia      soft    nofile  409600" >> /etc/security/limits.conf
+echo "entermedia      hard    nofile  1024000" >> /etc/security/limits.conf
+sysctl -p
+#End Fix File Limits
 mkdir /home/entermedia/.ffmpeg
 cp .ffmpeg/libx264-normal.ffpreset /home/entermedia/.ffmpeg/libx264-normal.ffpreset
 
