@@ -1,6 +1,7 @@
 ##make sure you have a user useradd entermedia 
 
 adduser entermedia
+usermod -a -G vboxsf entermedia
 
 mkdir /home/entermedia/.ffmpeg
 cp .ffmpeg/libx264-normal.ffpreset /home/entermedia/.ffmpeg/libx264-normal.ffpreset
@@ -23,6 +24,7 @@ rm ROOT.war
 
 chown -R entermedia:entermedia /opt/entermedia
 
+#iptables -F
 export ip=`ifconfig eth0 |grep "inet addr" |awk '{print $2}' |awk -F: '{print $2}'`
 /sbin/iptables -t nat -A OUTPUT -d localhost -p tcp --dport 80 -j REDIRECT --to-ports 8080
 /sbin/iptables -t nat -A OUTPUT -d $ip -p tcp --dport 80 -j REDIRECT --to-ports 8080
