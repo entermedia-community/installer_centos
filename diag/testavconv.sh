@@ -28,6 +28,8 @@ convert cc.tif results/03tifout.jpg
 
 avconv -i cb1sampleiTunes4.mov -y -acodec libfaac -ab 96k -ar 44100 -ac 1 -vcodec libx264 -preset medium -crf 28 -threads 2 -s 704x480 results/04outtmp.mp4
 
+ffprobe cb1sampleiTunes4.mov > results/10probe.txt
+
 qt-faststart results/04outtmp.mp4 results/05qtout.mp4
 
 avconv -ss 2 -i cb1sampleiTunes4.mov  -y -vframes 1 -f mjpeg results/06ffmpegout.jpg
