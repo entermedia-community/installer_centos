@@ -25,6 +25,8 @@ yum install -y ImageMagick-6.7.6.8-9.el6.x86_64.rpm ufraw-*
 
 cd ../misc
 cp -rp qt-faststart /usr/bin
+ln -s /usr/bin/avprobe /usr/bin/ffprobe
+
 sh ./install_entermedia.sh
 
 service tomcat start
