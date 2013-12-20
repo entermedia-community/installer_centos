@@ -6,4 +6,3 @@ pgrep java && /opt/entermedia/tomcat/bin/shutdown.sh
 if [ $PULL_DATA -eq "true" ]; then
    pgrep rsync || $DIR/pulldata.sh > ~/rsync.log;
 fi
-

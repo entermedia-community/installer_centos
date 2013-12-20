@@ -6,4 +6,3 @@ then
 else
   echo "Production is Down";$DIR/automation/productionsdown.sh
 fi
-
