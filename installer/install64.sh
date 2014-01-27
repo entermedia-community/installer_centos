@@ -28,6 +28,7 @@ cp -rp qt-faststart /usr/bin
 ln -s /usr/bin/avprobe /usr/bin/ffprobe
 
 sh ./install_entermedia.sh
+sh ./install_avconv.sh
 
 service tomcat start
 
