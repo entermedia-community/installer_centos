@@ -20,6 +20,7 @@ chkconfig --level 3 tomcat on
 chkconfig --level 5 tomcat on
 
 mkdir -p /opt/entermedia/tomcat/logs
+printf 'export JAVA_OPTS="-d64 -Xms256m -Xmx2024m -XX:MaxPermSize=128m"' > /opt/entermedia/tomcat/bin/setenv.sh
 
 mkdir -p /opt/entermedia/webapp
 cp -rp ../entermedia/* /opt/entermedia/
