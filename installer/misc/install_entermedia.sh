@@ -20,10 +20,10 @@ chkconfig --level 3 tomcat on
 chkconfig --level 5 tomcat on
 
 mkdir -p /opt/entermedia/tomcat/logs
-printf 'export JAVA_OPTS="-d64 -Xms256m -Xmx2024m -XX:MaxPermSize=128m"' > /opt/entermedia/tomcat/bin/setenv.sh
-
 mkdir -p /opt/entermedia/webapp
 cp -rp ../entermedia/* /opt/entermedia/
+cp -p ../misc/delegates.xml /etc/ImageMagick/delegates.xml
+
 cd /opt/entermedia/webapp
 wget http://dev.entermediasoftware.com/jenkins/view/Demo/job/demoall/lastSuccessfulBuild/artifact/deploy/ROOT.war -O ROOT.war
 unzip ROOT.war 
@@ -33,6 +33,7 @@ chown -R entermedia:entermedia /opt/entermedia
 
 chmod -R u+s,g+s /opt/entermedia 
 
+cp 
 #iptables -F
 export ip=`ifconfig eth0 |grep "inet addr" |awk '{print $2}' |awk -F: '{print $2}'`
 /sbin/iptables -t nat -A OUTPUT -d localhost -p tcp --dport 80 -j REDIRECT --to-ports 8080

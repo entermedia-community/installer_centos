@@ -1,10 +1,10 @@
-#Remove old programs and create a workspace
+#Remove old programs and create a workspace avconv
 apt-get remove ffmpeg x264 libx264-dev
 cd /tmp
 mkdir avconvupgrade
 cd avconvupgrade
 
-apt-get install gcc yasm make libvorbis-dev libfaac0 libmp3lame0 build-essential
+apt-get install gcc yasm make libvorbis-dev libfaac-dev libmp3lame0 build-essential libmp3lame-dev
 
 #Orbis Support
 curl -O http://downloads.xiph.org/releases/ogg/libogg-1.3.1.tar.gz
@@ -48,7 +48,7 @@ cd ..
 #Install avconv
 curl "http://git.libav.org/?p=libav.git;a=snapshot;h=HEAD;sf=tgz" | tar zxv
 cd libav-HEAD-*
-./configure --enable-libx264 --enable-libfaac --enable-libmp3lame --enable-gpl --enable-nonfree --enable-libvpx --enable-libvorbis
+./configure --prefix=/usr --enable-libx264 --enable-libfaac --enable-libmp3lame --enable-gpl --enable-nonfree --enable-libvpx --enable-libvorbis
 
 make
 make install
