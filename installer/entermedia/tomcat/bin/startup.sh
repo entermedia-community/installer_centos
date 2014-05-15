@@ -17,15 +17,7 @@
 
 # -----------------------------------------------------------------------------
 # Start Script for the CATALINA Server
-#
-# $Id: startup.sh 1202062 2011-11-15 06:50:02Z mturk $
 # -----------------------------------------------------------------------------
-
-if [ "$USER" == "root" ]
-     then
-         echo "Do NOT run as root!";
-         exit 1;
-fi
 
 # Better OS/400 detection: see Bugzilla 31132
 os400=false
