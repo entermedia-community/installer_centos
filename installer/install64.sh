@@ -21,7 +21,8 @@ yum update
 yum install -y java-1.6.0-openjdk lame  perl-Image-ExifTool libreoffice-headless libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-draw x264 ffmpeg unzip git
 
 cd ../rpms
-yum install -y ImageMagick-6.8.9-1.x86_64.rpm ufraw-*
+rpm -ihv --force --nodeps ImageMagick-*
+yum install -y ufraw-*
 
 cd ../misc
 cp -rp qt-faststart /usr/bin
