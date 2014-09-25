@@ -2,6 +2,9 @@
 # description: Tomcat Start Stop Restart
 # processname: tomcat
 # chkconfig: 234 20 80
+# move to bashrc
+umask u=rwx,g=rwx,o=rx
+
 JAVA_HOME=/usr/lib/jvm/jre/
 export JAVA_HOME
 PATH=$JAVA_HOME/bin:$PATH

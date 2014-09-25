@@ -29,7 +29,7 @@ make install
 cd ..
 
 #Upgrade x264
-wget ftp://ftp.videolan.org/pub/x264/snapshots/last_x264.tar.bz2
+wget http://download.videolan.org/pub/videolan/x264/snapshots/last_x264.tar.bz2
 tar jxvf last_x264.tar.bz2
 cd x264-snapshot-*
 ./configure --enable-shared --prefix=/usr
@@ -49,9 +49,11 @@ vpxenc
 cd ..
 
 #Install avconv
+cp /usr/lib/pkgconfig/x264.pc /usr/lib64/pkgconfig/
+ldconfig
 curl "http://git.libav.org/?p=libav.git;a=snapshot;h=HEAD;sf=tgz" | tar zxv
 cd libav-HEAD-*
-./configure --enable-libx264 --enable-libfaac --enable-libmp3lame --enable-gpl --enable-nonfree --enable-libvpx --enable-libvorbis
+./configure  --prefix="/usr" --enable-libx264 --enable-libfaac --enable-libmp3lame --enable-gpl --enable-nonfree --enable-libvpx --enable-libvorbis
 
 make
 make install
@@ -60,4 +62,4 @@ cd ..
 cd ..
 
 #Remove workspace
-rm -Rf avconvupgrade
+#rm -Rf avconvupgrade
