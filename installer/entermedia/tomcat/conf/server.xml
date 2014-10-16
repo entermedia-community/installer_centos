@@ -125,7 +125,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
                 prefix="localhost_access_log." suffix=".txt"
                         pattern="%h %l %u %t &quot;%r&quot; %s %b" />
-                                <Context path="/" docBase="/home/demo/entermedia/webapp" debug="false" reloadable="false" processTlds="false">
+                                <Context path="/" docBase="/opt/entermedia/webapp" debug="false" reloadable="false" processTlds="false">
 
  <Manager className="org.apache.catalina.session.PersistentManager"
         debug="0" distributable="false" saveOnRestart="false">
