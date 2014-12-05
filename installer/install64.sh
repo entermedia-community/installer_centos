@@ -20,6 +20,8 @@ yum update
 
 yum install -y java-1.7.0-openjdk lame  perl-Image-ExifTool libreoffice-headless libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-draw x264 ffmpeg unzip git
 
+yum -y install ilmbase OpenEXR-libs lcms2 libtool-ltdl librsvg2 libwmf-lite
+
 cd ../rpms
 rpm -ihv --force --nodeps ImageMagick-*
 yum install -y ufraw-*
