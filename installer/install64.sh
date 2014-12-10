@@ -20,18 +20,21 @@ yum update
 
 yum install -y java-1.7.0-openjdk lame  perl-Image-ExifTool libreoffice-headless libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-draw x264 ffmpeg unzip git
 
-yum -y install ilmbase OpenEXR-libs lcms2 libtool-ltdl librsvg2 libwmf-lite libXt libgomp libtiff
+yum -y install ilmbase OpenEXR-libs lcms2 libtool-ltdl librsvg2 libwmf-lite libXt libgomp libtiff faac lame
 
 cd ../rpms
 rpm -ihv --force --nodeps ImageMagick-*
 yum install -y ufraw-*
+rpm -ihv libogg-1*.rpm libvorbis-1*.rpm libvpx-1*.rpm x264-2*.rpm
+rpm -ihv libav-1*.rpm
 
 cd ../misc
 cp -rp qt-faststart /usr/bin
 ln -s /usr/bin/avprobe /usr/bin/ffprobe
 
 sh ./install_entermedia.sh
-sh ./install_avconv.sh
+# Removed the custom process because we are now installing them above as RPMs.
+#sh ./install_avconv.sh
 
 service tomcat start
 
