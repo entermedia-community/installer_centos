@@ -1,9 +1,9 @@
 #!/bin/bash
 #Must be run as root
 WHOAMI=$(whoami)
-if [[ "$WHOAMI" != "root"]]; then
+if [[ "$WHOAMI" != "root" ]]; then
 	echo "You must run this script as root!"
-	exit()
+	exit
 fi
 
 mkdir downloads
