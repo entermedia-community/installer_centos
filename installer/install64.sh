@@ -31,7 +31,7 @@ yum -y install ilmbase OpenEXR-libs lcms2 libtool-ltdl librsvg2 libwmf-lite libX
 cd ../rpms
 rpm -ihv --force --nodeps ImageMagick-*
 yum install -y ufraw-*
-rpm -Uhv libogg-1*.rpm libvorbis-1*.rpm libvpx-1*.rpm x264-0*.rpm openjpeg-2*.rpm
+rpm -Uhv libogg-1*.rpm x264-0*.rpm libvpx-1*.rpm libvorbis-1*.rpm  openjpeg-2*.rpm
 rpm -Uhv libav-1*.rpm
 
 cd ../misc
