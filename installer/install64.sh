@@ -6,6 +6,7 @@ if [[ "$WHOAMI" != "root" ]]; then
 	exit
 fi
 
+
 mkdir downloads
 cd downloads
 
