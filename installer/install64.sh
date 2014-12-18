@@ -26,9 +26,10 @@ rpm -ivh rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
 yum -y update
 
 cd ../rpms
-rpm -ihv --force --nodeps ImageMagick-*
+
 yum install -y ufraw-* lcms2
 rpm -Uhv libogg* libvorbis* x264* libvpx* openjpeg*
+rpm -ihv --force --nodeps ImageMagick-*
 rpm -Uhv libav*
 
 yum install -y java-1.7.0-openjdk lame  perl-Image-ExifTool libreoffice-headless libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-draw unzip git
