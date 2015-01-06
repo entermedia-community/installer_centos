@@ -56,3 +56,7 @@ avconv
 
 #Remove workspace
 #rm -Rf /tmp/avconvupgrade
+
+cp -rp qt-faststart /usr/bin
+ln -s /usr/bin/avprobe /usr/bin/ffprobe
+
