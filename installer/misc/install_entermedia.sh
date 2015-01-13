@@ -19,6 +19,9 @@ chkconfig --add tomcat
 chkconfig --level 3 tomcat on
 chkconfig --level 5 tomcat on
 
+#Remove any old tomcat if it exists
+rm -r /opt/entermedia/tomcat
+
 mkdir -p /opt/entermedia/tomcat/logs
 mkdir -p /opt/entermedia/webapp
 cp -rp ../entermedia/* /opt/entermedia/
