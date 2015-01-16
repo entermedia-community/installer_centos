@@ -4,6 +4,7 @@ cd /media
 ln -s git/entermedia-customisations/deployed/entermedia entermedia
 
 cp -r git/entermedia-customisations/data .
+chown -R entermedia:entermedia data
 
 mkdir local
 cd local
