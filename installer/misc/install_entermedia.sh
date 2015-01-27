@@ -32,6 +32,11 @@ wget http://dev.entermediasoftware.com/jenkins/view/Demo/job/demoall/lastSuccess
 unzip ROOT.war 
 rm ROOT.war
 
+#Copy data directory out and link it
+mkdir /media
+mv /opt/entermedia/webapp/WEB-INF/data /media
+ln -s /media/data /opt/entermedia/webapp/WEB-INF/data
+
 chown -R entermedia:entermedia /opt/entermedia
 
 chmod -R u+s,g+s /opt/entermedia 
