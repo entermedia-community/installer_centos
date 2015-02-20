@@ -27,6 +27,7 @@ yum -y update
 
 cd ../rpms
 
+yum install -y automake
 yum install -y ufraw-* lcms2
 rpm -Uhv libogg* libvorbis* x264* libvpx* openjpeg*
 rpm -ihv --force --nodeps ImageMagick-*
