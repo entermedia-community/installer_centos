@@ -1,5 +1,5 @@
 %define VER 6.9.0
-%define Patchlevel 0
+%define Patchlevel 7
 
 Name:           ImageMagick
 Version:        %{VER}.%{Patchlevel}
@@ -137,7 +137,6 @@ cp -p Magick++/demo/*.cpp Magick++/demo/*.miff Magick++/examples
            --with-x \
            --with-threads \
            --with-magick_plus_plus \
-           --with-gslib \
            --with-wmf \
            --with-lcms2 \
            --with-rsvg \
