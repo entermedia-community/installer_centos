@@ -5,12 +5,12 @@
 Summary:	Entermedia Software Digital Asset Management
 Name: 		entermedia
 Version: 	1.0
-Release: 	1
+Release: 	0
 License: 	GPL
 URL:		https://github.com/entermedia-community
 Vendor: 	EnterMedia Software, Inc.
 BuildRoot: 	%{_tmppath}/%{name}-root
-Requires: 	ImageMagick libav
+Requires: 	java-1.7.0-openjdk lcms2 lame faac ImageMagick libav perl-Image-ExifTool ghostscript
 Source0: 	entermedia-%{version}.tar.gz
 BuildArch: 	x86_64
 
@@ -25,15 +25,18 @@ EnterMedia is an Open Source Media Database that empowers you to take control of
 %install
 rm -rf ${RPM_BUILD_ROOT}
 mkdir -p ${RPM_BUILD_ROOT}/usr/bin
-install -m 755 install64.sh ${RPM_BUILD_ROOT}%{_bindir}
+install * ${RPM_BUILD_ROOT}%{_bindir}
+
+%post
+sh /usr/bin/Entermedia_Install_CentOS_64.sh
 
 %clean
 rm -rf ${RPM_BUILD_ROOT}
 
 %files
 %defattr(-,root,root)
-%attr(755,root,root) %{_bindir}/install64.sh
+%attr(755,root,root) %{_bindir}/Entermedia_Install_CentOS_64.sh
 
 %changelog
-* Tue Feb 24 2015 Chris Rose <chris.rose@entermediasoftware.com> 1.0-1
+* Tue Feb 24 2015 Chris Rose <chris.rose@entermediasoftware.com> 1.0-0
 - Initial Build
