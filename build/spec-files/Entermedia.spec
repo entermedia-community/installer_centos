@@ -36,6 +36,9 @@ rm -rf ${RPM_BUILD_ROOT}
 %files
 %defattr(-,root,root)
 %attr(755,root,root) %{_bindir}/Entermedia_Install_CentOS_64.sh
+%{_bindir}/qt-faststart
+%{_bindir}/tomcat
+%{_bindir}/libx264-normal.ffpreset
 
 %changelog
 * Tue Feb 24 2015 Chris Rose <chris.rose@entermediasoftware.com> 1.0-0
