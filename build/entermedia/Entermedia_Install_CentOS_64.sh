@@ -26,13 +26,12 @@ chkconfig --add tomcat
 chkconfig --level 3 tomcat on
 chkconfig --level 5 tomcat on
 
+mkdir -p /opt/entermedia/webapp
 cd /opt/entermedia/
 wget https://github.com/entermedia-community/tomcat8/archive/master.zip -O tomcat.zip
 unzip tomcat.zip
 rm -f tomcat.zip
-
-mkdir -p /opt/entermedia/tomcat/logs
-mkdir -p /opt/entermedia/webapp
+mv tomcat8-master tomcat
 
 cd /opt/entermedia/webapp
 wget http://dev.entermediasoftware.com/jenkins/view/Demo/job/demoall/lastSuccessfulBuild/artifact/deploy/ROOT.war -O ROOT.war
