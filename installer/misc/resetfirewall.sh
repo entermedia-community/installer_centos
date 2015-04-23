@@ -20,6 +20,8 @@ export ip=`ifconfig eth0 |grep "inet addr" |awk '{print $2}' |awk -F: '{print $2
 /sbin/iptables -t nat -A OUTPUT -d $ip -p tcp --dport 22 -j REDIRECT --to-ports 22
 /sbin/iptables -t nat -A PREROUTING -d $ip -p tcp --dport 22 -j REDIRECT --to-ports 22
 
+/sbin/iptables -A INPUT -j DROP
+
 
 iptables-save > /etc/sysconfig/iptables
 
