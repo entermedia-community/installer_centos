@@ -32,19 +32,19 @@ if [[ "$WHOAMI" != "root" ]]; then
         exit
 fi
 
-INSTALLER= `cd -P "$(dirname $0)" && pwd`
+INSTALLER= `cd -P "$(dirname "$0")" && pwd`
 
-apt-get install -y automake libogg0 libogg-dev libvorbis0a libvorbisenc2 x264 liblcms2-22 libopenjpeg2 libav-tools openjdk-7-jdk lame libimage-exiftool-perl libreoffice unzip git libilmbase6 libopenexr6 libltdl-dev librsvg2-2 libwmf-bin libxt6 libgomp1 libtiff5-dev libtiff5 libfaac-dev lame imagemagick ghostscript iptables-persistent
+apt-get install --no-install-recommends --force-yes automake libogg0 libogg-dev libvorbis0a libvorbisenc2 x264 liblcms2-2 libopenjpeg2 libav-tools openjdk-7-jdk lame libimage-exiftool-perl libreoffice unzip git libilmbase6 libopenexr6 libltdl-dev librsvg2-2 libwmf-bin libxt6 libgomp1 libtiff5-dev libtiff5 libfaac-dev lame imagemagick ghostscript iptables-persistent
 
 # soffice may need configuration to use --headless
 # src: http://askubuntu.com/questions/194352/install-openoffice-for-headless-use
 
-cp -rp ${INSTALLER}/misc/qt-faststart /usr/bin
+cp -rp ./misc/qt-faststart /usr/bin
 
-# No longer necessaryy to link these? apt install seems to have created both
+# No longer necessary to link these? apt install seems to have created both
 # ln -s /usr/bin/avprobe /usr/bin/ffprobe
 
-${INSTALLER}/misc/install_entermedia.sh
+./misc/install_entermedia_deb.sh
 
 service tomcat start
 

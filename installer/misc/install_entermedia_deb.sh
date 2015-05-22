@@ -1,7 +1,7 @@
 #!/bin/bash
 ##make sure you have a user useradd entermedia
 cd `dirname $0`
-adduser entermedia
+useradd -m entermedia
 #usermod -a -G vboxsf entermedia
 
 # Fix File Limits
