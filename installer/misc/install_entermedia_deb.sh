@@ -37,7 +37,8 @@ mkdir /media
 mv /opt/entermedia/webapp/WEB-INF/data /media/
 ln -s /media/data /opt/entermedia/webapp/WEB-INF/data
 
-chown -R entermedia:entermedia /opt/entermedia
+chown -R entermedia. /opt/entermedia
+chown -R entermedia. /media
 
 chmod -R u+s,g+s /opt/entermedia
 
