@@ -46,8 +46,6 @@ cp -rp ./misc/qt-faststart /usr/bin
 
 ./misc/install_entermedia_deb.sh
 
-su entermedia
-
-service tomcat start
+su - entermedia -c 'service tomcat start'
 
 echo "Install complete. see: http://localhost:8080/emshare"
