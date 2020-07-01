@@ -196,7 +196,7 @@ fi
 CLASSPATH="$CLASSPATH""$CATALINA_HOME"/bin/bootstrap.jar
 
 if [ -z "$CATALINA_OUT" ] ; then
-  CATALINA_OUT="$CATALINA_BASE"/logs/catalina.out
+  CATALINA_OUT=/dev/null
 fi
 
 if [ -z "$CATALINA_TMPDIR" ] ; then
