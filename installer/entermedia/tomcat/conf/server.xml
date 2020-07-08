@@ -122,9 +122,6 @@
  <Host name="localhost"  appBase="webapps"
          unpackWARs="true" autoDeploy="false">
                 
-        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
-                prefix="localhost_access_log." suffix=".txt"
-                        pattern="%h %l %u %t &quot;%r&quot; %s %b" />
                                 <Context path="/" docBase="/opt/entermedia/webapp" debug="false" reloadable="false" processTlds="false">
 
  <Manager className="org.apache.catalina.session.PersistentManager"
